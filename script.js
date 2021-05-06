@@ -1,3 +1,10 @@
+// Randomizer function declaration
+const logPhrases = arr => {
+    let random = Math.floor(Math.random() * arr.length);
+    
+    return arr[random];
+};
+
 // Arrays containing messages to be randomised later:
 
 // Used for the "Your sign is X." template
@@ -44,29 +51,13 @@ const doableStuff = [
     'move to Hawaii'
 ];
 
-// Function declarations
+// Phrases to be printed later
+const phrases = [
+    `Your sign is ${logPhrases(signs)}.`,
+    `You're having ${logPhrases(adjectives)} luck today.`,
+    `You should: ${logPhrases(doableStuff)}.`
+];
 
-// Console logging the sign template
-const logSigns = arr => {
-    let random = Math.floor(Math.random() * arr.length);
-
-    console.log(`Your sign is ${arr[random]}.`);
+for (let i = 0; i < phrases.length; i++) {
+    console.log(phrases[i]);
 };
-
-// Console logging the luck template
-const logLuck = arr => {
-    let random = Math.floor(Math.random() * arr.length);
-
-    console.log(`You're having ${arr[random]} luck today.`);
-};
-
-// Console logging the doable stuff
-const logStuff = arr => {
-    let random = Math.floor(Math.random() * arr.length);
-
-    console.log(`You should: ${arr[random]}.`)
-};
-
-logSigns(signs);
-logLuck(adjectives);
-logStuff(doableStuff);
